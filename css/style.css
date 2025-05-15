@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --color-primary: #c70039;
+  --color-secondary: #6c757d;
+}
+body{
+  font-family: "Roboto", sans-serif;
+  background: #222;
+  color: #f2f2f2;
+  cursor: url("../img/cursor-arrsow.png"),auto;
+}
+
+h1::selection {
+  background-color: deeppink;
+}
+/* Numeración de secciones */
+body {
+  counter-reset: cuenta-secciones;
+}
+section::before {
+  content: "Sección N°" counter(cuenta-secciones);
+  counter-increment: cuenta-secciones;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+}
+/* Hipervinculos */
+
+/** Agrego un elemento * al html segun el estado del <li> **/
+/* ... a quien | cuando          | donde              => que
+      selector | :seudo-selector | ::seudo-elemento   => { content: "" }*/
+
+  nav ul {
+    list-style: none;
+    padding: 0px;
+    margin-left: 10px;
+    li {
+      display: inline-block;
+      margin-right: 30px;
+      &::before{
+        content: "\2606";
+        color: var(--color-primary);
+        font-size: 30px;
+        visibility: hidden;
+      }
+      &:hover::before{
+        visibility: visible;
+      }
+    }
+  }
+
+a {
+  margin: 10px;
+  font-size: 30px;
+  text-decoration: none;
+  &:link{
+    cursor: url("../img/cursor-pointer.png"), pointer;
+    color: var(--color-primary);  
+  }
+  &:visited{
+    color: var(--color-secondary);
+  }
+  &:hover{
+    text-decoration: underline  ;
+  }
+}
+
+/* Listas */
+.tooltip .tooltiptext{
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+ul.lista {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+  li {
+    margin: 0;
+    padding: 8px 10px;
+    color: #111;
+    &:nth-child(odd) {
+      background-color: #e5e5e5;
+    }
+    &:nth-child(even) {
+      background-color: #887e7e;
+    }
+    &:hover {
+      background-color: yellowgreen;
+      cursor: pointer;
+    }
+  }
+}
+
+
+/* Parrafos */
+
+p {
+  &:first-child{ /* primer párrafo */
+    font-size: 25px;
+  }
+  &:last-child{ /* último párrafo */
+    font-size: 13px;
+  }
+  &:nth-child(2n){ /* parrafos pares */
+    color: var(--color-secondary)
+    
+  }
+  &:nth-child(2n)::first-line {
+    color: white;
+  }
+  &:nth-child(2n+1){ /* parrafos impares */
+    color: var(--color-primary)
+  }
+}
+
+
+/* Formularios */
+form div {
+  margin: 5px 10px;
+}
+  
+input:disabled{
+  background:#222;
+  border: 1px solid var(--color-secondary);
+}
+input:focus{
+  outline: none;
+}
+input:focus::placeholder{
+  color: transparent;
+}
+input::placeholder{
+  color: #999;
+}
+input[type="text"]:valid,
+input[type="email"]:valid {
+  border: 2px solid green;
+}
+input[type="text"]:invalid,
+input[type="email"]:invalid {
+  border: 2px solid red;
+}
+input[type="reset"],
+input[type="submit"] {
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+input[type="reset"]{
+  background: var(--color-primary);
+}
+input[type="submit"] {
+  background: var(--color-secondary);
+}
+.required::after {
+  content: "*";
+  color: red;
+}
+
+div:only-child{
+  background-color: snow;
+}
+
+/* Dialogo-perrito */
+/* --------------- */
+.dialogo {
+  background: var(--secondary-color);
+  padding: 10px;
+  color: #000;
+  margin: 30px auto;
+  border-radius: 15px;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  width: 200px;
+  /*Agrego position relative porque voy a añadir el 
+    triangulito para la viñeta y el perrito con position absolute */
+  position: relative;
+}
+
+/** ... añadir el triagulito para formar la viñeta **/
+.dialogo::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -60px;
+  border-top: 20px solid var(--secondary-color);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  right: calc(50% - 20px);
+}
+
+/** ... añadir el perrito **/
+.dialogo::after {
+  content: url("../img/perro.gif");
+  display: block;
+  position: absolute;
+  bottom: -150px;
+}

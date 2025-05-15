@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Clases y Pseudo-Elementos</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>Pseudo-Clases y Pseudo-Elementos</h1>
+    <nav>
+      <ul>
+        <li><a>sin href</a></li>
+        <li><a href="http://www.google.com">Google</a></li>
+        <li><a href="#listas">Listas</a></li>
+        <li><a href="#parrafos">Parrafos</a></li>
+        <li><a href="#formularios">Formularios</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="listas">
+        <h2 class="tooltip">
+          <span>Listas</span>
+          <span class="tooltiptext">Otra vez listas!</span>
+        </h2>
+        <h3>Lista Rayada</h3>
+        <ul class="lista">
+          <li>200g de harina</li>
+          <li>1 taza de azúcar</li>
+          <li>1 taza de leche</li>
+          <li>Sal</li>
+          <li>Aceite de oliva</li>
+        </ul>
+      </section>
+      <section id="parrafos">
+        <h2>Mas Pseudo-clases</h2>
+        <div>
+          <p>Primer párrafo - impar</p>
+          <p>
+            Segundo párrafo. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+          <p>Tercer párrafo - impar</p>
+          <p>
+            Cuarto párrafo, Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+        </div>
+      </section>
+      <section id="formularios">
+        <h2>Ahora un form</h2>
+        <form action="">
+          <fieldset>
+            <legend>Mi form de prueba</legend>
+            <!-- Opcion simple -->
+            <div>
+              <label for="nombre" class="required">Nombre y apellido</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Juan Perez"
+                minlength="3"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="required">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="alguien@mail.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="tel">Tel</label>
+              <input
+                type="tel"
+                id="tel"
+                name="tel"
+                placeholder="123-901"
+                disabled
+              />
+            </div>
+            <div>
+              <input type="reset" value="Resetear" />
+              <input type="submit" value="Enviar" />
+            </div>
+            <!-- <button type="submit"></button> -->
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="dialogo">
+        <p>Listo chau!</p>
+      </div>
+    </footer>
+  </body>
+</html>
